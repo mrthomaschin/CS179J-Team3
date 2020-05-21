@@ -1,28 +1,19 @@
-language: c
-
 language: python
 python:
-  - "3.4"
-  - "3.5"
-  - "3.6"
-  - "3.7"
-
-#dependencies
+- '3.4'
+- '3.5'
+- '3.6'
+- '3.7'
 install:
-  - pip install -r requirements.txt
-  
+- pip install -r requirements.txt
+script:
+- pytest
+branches:
+- master
+- tchin006/AWS_Atmega
+- cgray009/functionality
+- jhalvorson6687/unit_tests
 env:
   global:
-    - secure: "B9TQRzWIFua7cBBQX23EOzXGBcBpSs4w6aF3zUyUmoNJ+IX45Vvj4ZxsONbjLmJ1iKFgiCuILiirwLI+LusgFFPTBZ89jZa4OYqHukqTrobZSNgWQH2yih8YUN72OiSrqwAZEGWxZ5kMA6N0M5iHvQat1AJaaniciqi/2qvsH/GYVYxD5H+Z7C4EqCxq4GNwl0a3us4BaY+vqeI72jnvm/Gjo6gKnUjHLCT7Zg9//enPhTtKeadBlsCpJoBmCJNqp9au0TE/2pa78OX3KlKsaYAQmarZaFoqAxcsQvDYiotjKgDuQRxxYHlMnMzN/fLBkqf90ooa8q6F5Bah/9JjE4rYOpQMjbS8WZujxJV/ldnf8ihlX3OKYRH8x3ICTLup4k9Osxdsdpf8LC6Niyo7fE9ylufn8x+jAjFcM+BcjcUQCdI48imTlFBn8cNOjy27M+2g77ms73jZqkI2GYY2ELqtyWvL/iBtgWKSnfv/5HSGcaXPQhHirAEzbi6fw1/+LufFRVQ2aBX7ShNqHazf6KORM+p3VC1YM20bgjmvc3GS4MCD6QOwERSRdQTVDfWT0MYzsPqWN8w+sfMVJuhp7hLhyAiNktraFO/Xz82ayDXDBplmz8VfSO7xBYFkv9RVzLaOMLjK/rrorFT1u0UNDLoDM8Xb/Csr5dQGVZX6a6U="
-    - secure: "DPS/H+meg2jY6tQnUt5BE4G0OHRGTGQIxQXfCZlwGauBrUomktePVa6uZhKEzq1kUgIxO+J1kAegXIfW2JLfuLeHk8WPElyUsmwfdXI3DQPnsmKXlLyQS2STYjPXMCozf/bGE9CZZQZTEk3eI4BEgjsh8UPfRRNGcOKaa/n5sxpBty8DWYDilHwAlWOPLs/BANrr5hic/I6A8g00G3vo6zQqMfiaasG723WX33Lqe6Tkx1xwFiaK4cM8V17nol7FYlifcpxp5AzMm4WukdEhZ6jjhcDHp2jeso4NNzXFb3uyJ7pLtr5aOJkh6NxR6ROXV3XER5U4hv3tAtfPc2IYnslFN58WE0LGYotK2rvClQIqUkcosVgRsCJnwSE4MyXMXPf7X+OUEYuR8Or3wgi2H2VLmPI02res38/wuYW1fk/smCNDEEnRoevAES9jICShgCveLd2rNIoBIC5HFeTm/uKoKybAacQz1Vwpm3VQDR8iSNMJb8rRvz7WCJgo61IM/6bclwGx7Wf7/xrSEJg/RNZECFDW+VWjkwryHrLKHNgCGyMS0XfL+a1kgNfsTmtu1EVB0/2mdAvq5WIDkr6nR6HjwRGLZ2LnLGzN9alaJjLuHOsPTnNHGaIypq4becfM1rDnoMxj8T8ius5SpDK6ZM/cRhBjVuTDMqwsfIats2U="
-
-
-#run tests
-script:
-  - pytest
-
-branches:
-  - master
-  - tchin006/AWS_Atmega
-  - cgray009/functionality
-  - jhalvorson6687/unit_tests
+  - secure: cR83EFK7Giz8hMrj2pZgK/yFpe9cmLaJZxP2zwY5x65/uVT4tzsOzhsRTl/RJVkCE8BoUhsctlg0xtIBZ0Z/E/+qPiDB4eeNPRPgTkE8PC6A3jFEriG63YDio5t09YWh+QBVZuszYanAxeCcUwICVV2vnoZYUZVW7BJxTFHBaKBOMxLKgQfV7fjKB9GuVCPzcz8sKnRLal+7cYQ8PZzHhqRdZvlOstmvWRlQHnyBcvsOlGjqWc44oVGlAT7Usc7SDxgL7sHAVLFDua3U5XLHEuoXau9Wro3SKrK+F/wSDgml+S2NngSGjV+XGCds9mVjTUvN1Et3jGgXCkxa9jiYPDz2Cq30dNPPzp+suyqmIHKJ8+D9p6o+Qey20lWtWzPWvrQMMoYRAheB76FDAn8Q1zfSqoJWP7Y1fTyPODRjVTnFZXXBfyhOG1PswbTm6gblLvrdqkz1kC97sb41aQJFUzkAn5xYePvQm8wz+UZZFBseC9LmuDi9p0gpq+sMkvqpTa5STqTylJdZXaOE2TCGpx2cu1S+GYsNTbpQHET77Dg8p5SrM6Te1XkAM2WkcyunOs/i2XUQ72wRsAIz9zgstYBXEJrK6KQ39141CtfWd0H9A6owmBo8q+pkg69/Pgjj5lfiCnCGjmYlq+ECl31WJRFYK2kLHnV3RNGc5OTYvWg=
+  - secure: ZkZNW1exF5OiKTnnCPOGNn2PzH/3vR61IN+f5ZxtQK/nY8B+Sw5ghrAPQEh8yGx80fYs0tx29EsNO36OS/VncjlOgl/+1cWpfju7GosjARSZVRiNNWoH4fr2vycFB0VVkMSuSpnuhOqTs7Fba/HOFcuLhKWVUxKUWIdYnVU3AJUWfAZd5RV+bBbLqfP5GDfdDk5tna5sr1xjqEOFipebxlychYWjJLeFU5EYzmZqjSopDJ/SlbSrMjhuv9g0eKIeqhdH+h4b061v8H7iSHaYzU/vdggrooqDNUoicBoc0vxIAiar+EuqC68g8LHMKTvGJf73DRtsIUDCYGNw0FLI+yFw84ZuYdg3k4lq8HnZxWxnsttMO3UF+Eueyt6CtmU9M6Ltkgdltx1TDkM9O4KPW8ueupbkVILlLpNvFyFjbgntIRsr/MfWWHDPJJtE2ycPvNCTnk5kHEVaNwjDc7nOrkW5NagSbY3F4jrfd8qxwJ0b723qkY9J1DgLs4lYw6nbur6AynXAkZ7X3G0H+l4DCads/G+H6sk/4jAYPVFlRAReqT5UcN9cArxT4IvyQDfXPxnpVeNhgsb6+7JKAYjL0lsPqvcGvKQO33g2pHBO5kigi8eehbSQNEKH4MYwSMwbXABIgh7YxlWYRCpldhfASri693qItDCFFLz8YZX5Yyk=
